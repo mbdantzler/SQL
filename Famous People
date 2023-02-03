@@ -1,0 +1,43 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE persons (id INTEGER PRIMARY KEY, fullname TEXT, spouse_fullname TEXT, year_born INTEGER, birth_city TEXT);
+
+INSERT INTO persons VALUES (1, "George Clooney", "Amal Clooney", 1961, "Lexington");
+INSERT INTO persons VALUES (2, "Whitney Houston", "Bobby Brown - divorced", 1963, "Newark");
+INSERT INTO persons VALUES (3, "Jeffrey Eugenides", "No Spouse", 1960, "Detroit");
+INSERT INTO persons VALUES (4, "Lilly Singh", "No Spouse", 1988, "Toronto");
+INSERT INTO persons VALUES (5,"Matt Damon", "Luciana Barroso", 1970, "Boston");
+INSERT INTO persons VALUES (6, "Julia Roberts", "Danny Mody", 1967, "Smyrna");
+INSERT INTO persons VALUES (7, "Donna Tartt", "No Spouse", 1963, "Greenwood");
+INSERT INTO persons VALUES (8, "Toni Morrison", "Harold Morrison", 1931, "Lorain");
+INSERT INTO persons VALUES (9, "Alice Walker", "Melvin Leventhal", 1944, "Eatonton");
+INSERT INTO persons VALUES (10, "Bruce Springsteen", "Julianne Phillips - divorced", 1949, "Long Branch");
+INSERT INTO persons VALUES (11, "Shania Twain", "Mutt Lange - divorced" , 1965, "Windsor");
+INSERT INTO persons VALUES (12, "Madonna", "Sean Penn - divorced", 1958, "Bay City");
+INSERT INTO persons VALUES (13, "Jay - Z", "Beyonce Knowles", 1969, "New York City");
+INSERT INTO persons VALUES (14, "Liza Koshy", "No Spouse", 1996, "Houston");
+INSERT INTO persons VALUES (15, "Priyanka Chopra", "Nick Jonas", 1982, "Jamshedpur");
+
+CREATE TABLE careers (id INTEGER PRIMARY KEY, profession TEXT, biggest_hit TEXT, biggest_award TEXT);
+
+INSERT INTO careers VALUES (1, "Actor", "Ocean's 11", "Oscar");
+INSERT INTO careers VALUES (2, "Singer", "I Will Always Love You", "Grammy");
+INSERT INTO careers VALUES (3, "Author", "Middlesex", "Pulitzer");
+INSERT INTO careers VALUES (4, "Youtuber", "Three Girls One Elevator", "Streamy");
+INSERT INTO careers VALUES (5, "Actor", "Good Will Hunting", "Oscar");
+INSERT INTO careers VALUES (6, "Actress", "Pretty Woman", "Oscar");
+INSERT INTO careers VALUES (7, "Author", "The Goldfinch", "Pulitzer");
+INSERT INTO careers VALUES (8, "Author", "Beloved", "Pulitzer");
+INSERT INTO careers VALUES (9, "Author", "The Color Purple", "Pulitzer");
+INSERT INTO careers VALUES (10, "Musician", "Dancing in the Dark", "Grammy");
+INSERT INTO careers VALUES (11, "Singer", "Any Man of Mine", "ACM");
+INSERT INTO careers VALUES (12, "Singer", "Like a Virgin", "Grammy");
+INSERT INTO careers VALUES (13, "Rapper", "N***** In Paris", "Grammy");
+INSERT INTO careers VALUES (14, "Youtuber", "My Boyfriend Does My Voiceover", "Streamy");
+INSERT INTO careers VALUES (15, "Actress", "Don 2", "Filmfare");
+
+
+SELECT persons.fullname, persons.spouse_fullname, persons.year_born, persons.birth_city, careers.profession, careers.biggest_hit, careers.biggest_award
+    FROM persons
+	JOIN careers
+    ON careers.id = persons.id;
