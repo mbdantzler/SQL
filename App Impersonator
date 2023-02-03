@@ -1,0 +1,18 @@
+CREATE TABLE games (id INTEGER PRIMARY KEY AUTOINCREMENT,
+	game TEXT,
+	score INTEGER,
+	date TEXT);
+
+INSERT INTO games VALUES (1, "Racing", 3000, "11-17-2022");
+INSERT INTO games VALUES (2, "Bowling", 200, "12-30-2021");
+INSERT INTO games VALUES (3, "Archery", 1500, "5-23-2018");
+
+SELECT * FROM games;
+
+UPDATE games SET score = 4500 WHERE id = 1;
+
+SELECT * FROM games;
+
+DELETE FROM games WHERE id = 3;
+
+SELECT * FROM games;
