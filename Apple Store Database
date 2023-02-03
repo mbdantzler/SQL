@@ -1,0 +1,27 @@
+-Create an appleproducts database
+
+CREATE TABLE appleproducts (id INTEGER PRIMARY KEY, item TEXT, model TEXT, size TEXT, storage TEXT, price INTEGER);
+
+INSERT INTO appleproducts VALUES (1, "Mac", "Mac Studio", "M1 Ultra","1TB SSD",3999);
+INSERT INTO appleproducts VALUES (2,"Mac", "Mac Studio", "M1 Max","512GB SSD",1999);
+INSERT INTO appleproducts VALUES (3, "Mac", "iMac", "24 inch", "256 GB", 1299);
+INSERT INTO appleproducts VALUES (4, "Macbook", "Pro","16 inch", "512 GB", 2499);
+INSERT INTO appleproducts VALUES (5, "Macbook", "Pro","14 inch", "512 GB", 1999);
+INSERT INTO appleproducts VALUES (6, "Macbook", "Pro","13 inch","256 GB", 1299);
+INSERT INTO appleproducts VALUES (7, "iPad", "Pro", "12.9 inch", "128 GB", 1099);
+INSERT INTO appleproducts VALUES (8, "iPad", "Air", "11 inch", "64 GB", 599);
+INSERT INTO appleproducts VALUES (9, "iPad", "Mini", "7.69 inch", "64 GB", 499);
+INSERT INTO appleproducts VALUES (10, "iPhone","13 Pro Max", "6.7 inch", "128 GB", 1099);
+INSERT INTO appleproducts VALUES (11, "iPhone","13 Pro", "6.1 inch", "128 GB", 999);
+INSERT INTO appleproducts VALUES (12, "iPhone","13", "5.4 inch", "128 GB", 799);
+INSERT INTO appleproducts VALUES (13, "Apple Watch", "Series 7", "41mm", "GPS", 399);
+INSERT INTO appleproducts VALUES (14, "Apple Watch", "SE", "40 mm", "GPS", 279);
+INSERT INTO appleproducts VALUES (15, "Apple Watch", "Series 3", "38mm", "GPS",199);
+
+--display the number of items sold in the store
+SELECT COUNT(id) FROM appleproducts;
+SELECT * FROM appleproducts;
+
+--display the database ordered by price
+SELECT * FROM appleproducts
+    ORDER BY price desc;
