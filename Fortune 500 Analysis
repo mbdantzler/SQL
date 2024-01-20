@@ -1,0 +1,33 @@
+--Group the data in a new way using a CASE statement.
+--Group the industries by employee tenure
+
+SELECT company_name, avg_employee_tenure,
+CASE WHEN avg_employee_tenure >=7.0 THEN 'High tenure'
+WHEN avg_employee_tenure >=4.0 THEN 'Moderate tenure'
+ELSE 'Low tenure' 
+END AS AverageIndustryTenure
+FROM fortune_companies
+ORDER BY AverageIndustryTenure;
+
+--Use a HAVING clause to determine something interesting about the data per category.
+--Return the industries that have an average PTO at least 20 days
+SELECT industry, ROUND(AVG(paid_time_off_days),1) AS average_PTO
+FROM fortune_companies
+GROUP BY industry
+HAVING average_PTO >= 20
+ORDER BY average_PTO desc;
+
+
+--Use logical operators like AND or OR to filter the data in an interesting way.
+--Return companies that have High Tenure and at least 20 PTO days. What is their revenue?
+SELECT company_name, avg_employee_tenure, paid_time_off_days, revenue
+FROM fortune_companies
+WHERE avg_employee_tenure>=7.0
+AND paid_time_off_days>=20
+ORDER BY revenue desc;
+
+
+--Use an aggregate function like AVG, SUM, COUNT, MAX, and/or MIN to return summary statistics about the data.
+--Count number of companies that do and do not offer healthcare benefits
+SELECT COUNT(CASE WHEN healthcare_benefits = 1 THEN 'Benefits Offered' END) AS BenefitsOffered, COUNT(CASE WHEN healthcare_benefits = 0 THEN 'No benefits offered' END) AS NoBenefitsOffered
+FROM fortune_companies;
